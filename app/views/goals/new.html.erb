@@ -1,0 +1,10 @@
+<form  action='<%= goals_url  %>' method="post">
+  <input type="hidden" name="authenticity_token" value=  '<%= form_authenticity_token %>' >
+
+  <label>Title <input type="text" name="goal[title]" value= '<%= @goal.title  %>' ></label>
+  <label>Details  <textarea name="goal[details]" rows="8" cols="40"><%= @goal.details  %></textarea></label>
+  <label><input type="checkbox" name="goal[private]" value= true  <%= 'checked' if @goal.private %> >Private</label>
+  <label><input type="checkbox" name="goal[completed]" value= true <%='checked' if @goal.completed  %>  >Completed</label>
+
+  <input type="submit"  value="Add Goal">
+</form>
